@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "afterhalls:block/bleakwood_slab"
+    },
+    "type=double": {
+      "model": "afterhalls:block/bleakwood_planks"
+    },
+    "type=top": {
+      "model": "afterhalls:block/bleakwood_slab_top"
+    }
+  }
+}

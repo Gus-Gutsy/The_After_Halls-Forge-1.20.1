@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "afterhalls:crying_iron_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X X",
+    "   "
+  ],
+  "result": {
+    "item": "afterhalls:crying_iron_helmet"
+  },
+  "show_notification": true
+}

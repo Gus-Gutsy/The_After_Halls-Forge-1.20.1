@@ -1,0 +1,5 @@
+// 1.20.1	2025-06-17T20:59:14.5049562	Tags for minecraft:block mod id afterhalls
+2132c243625999c903a94ce201d01e6f11f2e051 data/minecraft/tags/blocks/fences.json
+ed95eb2e60502d9ebff4d0b20b108338463a3d83 data/minecraft/tags/blocks/fence_gates.json
+966d9bb880f31e5ceea701b4c05a771d359b7f68 data/minecraft/tags/blocks/mineable/pickaxe.json
+966d9bb880f31e5ceea701b4c05a771d359b7f68 data/minecraft/tags/blocks/needs_stone_tool.json

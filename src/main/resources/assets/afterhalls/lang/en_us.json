@@ -1,0 +1,27 @@
+{
+  "item.afterhalls.cursed_raw_iron" : "Cursed Raw Iron",
+  "item.afterhalls.raw_silver" : "Raw Silver",
+  "item.afterhalls.crying_iron_ingot": "Crying Iron Ingot",
+  "item.afterhalls.crying_iron_helmet": "Crying Iron Helmet",
+  "item.afterhalls.crying_iron_chestplate": "Crying Iron Chestplate",
+  "item.afterhalls.crying_iron_leggings": "Crying Iron Leggings",
+  "item.afterhalls.crying_iron_boots": "Crying Iron Boots",
+  "item.afterhalls.seer_lantern": "Seer's Lantern",
+  "item.afterhalls.pomegranate": "Pomegranate",
+
+  "block.afterhalls.crying_iron_block": "Block of Crying Iron",
+  "block.afterhalls.silver_ore": "Silver Ore",
+  "block.afterhalls.bleakwood_planks": "Bleakwood Planks",
+  "block.afterhalls.bleakwood_stairs": "Bleakwood Stairs",
+  "block.afterhalls.bleakwood_slab": "Bleakwood Slab",
+  "block.afterhalls.bleakwood_button": "Bleakwood Button",
+  "block.afterhalls.bleakwood_pressure_plate": "Bleakwood Pressure Plate",
+  "block.afterhalls.bleakwood_fence": "Bleakwood Fence",
+  "block.afterhalls.bleakwood_fence_gate": "Bleakwood Fence Gate",
+  "block.afterhalls.bleakwood_door": "Bleakwood Door",
+  "block.afterhalls.bleakwood_trapdoor": "Bleakwood Trapdoor",
+
+  "creativetab.after_halls_tab" : "The After Halls",
+
+  "tooltip.afterhalls.seer_lantern": "Ignites when enemies are close."
+}

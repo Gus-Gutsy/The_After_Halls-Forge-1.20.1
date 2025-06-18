@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "crying_iron",
+  "ingredient": {
+    "item": "afterhalls:cursed_raw_iron"
+  },
+  "result": "afterhalls:crying_iron_ingot"
+}

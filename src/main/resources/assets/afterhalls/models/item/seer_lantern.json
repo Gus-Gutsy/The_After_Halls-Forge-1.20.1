@@ -1,0 +1,11 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "afterhalls:item/seer_lantern_close"
+  },
+  "overrides": [
+    {"predicate": { "afterhalls:nearby": 0.33 }, "model": "afterhalls:item/seer_lantern_medium"},
+    {"predicate": { "afterhalls:nearby": 0.66 }, "model": "afterhalls:item/seer_lantern_far"},
+    {"predicate": { "afterhalls:nearby": 1.0 }, "model": "afterhalls:item/seer_lantern_off"}
+  ]
+}
