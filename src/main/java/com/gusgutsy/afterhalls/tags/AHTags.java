@@ -9,10 +9,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class AHTags {
-
     // When creating a new tag, add it below, and make a JSON file in data.afterhalls.blocks or data.afterhalls.items following format:
     // { "values": [ "item", "names", "here" ] }
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_CRYING_IRON_TOOL = tag("needs_crying_iron_tool");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(AfterHalls.MOD_ID, name));

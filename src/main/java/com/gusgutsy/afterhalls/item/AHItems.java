@@ -1,8 +1,10 @@
 package com.gusgutsy.afterhalls.item;
 
 import com.gusgutsy.afterhalls.AfterHalls;
-import com.gusgutsy.afterhalls.item.special.SeerLanternItem;
+import com.gusgutsy.afterhalls.item.special.*;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -26,6 +28,18 @@ public class AHItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_BOOTS = ITEMS.register("crying_iron_boots",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CRYING_IRON_AXE = ITEMS.register("crying_iron_axe",
+            () -> new CryingIronAxeItem(AHToolTiers.CRYING_IRON, 6, -3.1f, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_HOE = ITEMS.register("crying_iron_hoe",
+            () -> new CryingIronHoeItem(AHToolTiers.CRYING_IRON, -1, -2.0f, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_PICKAXE = ITEMS.register("crying_iron_pickaxe",
+            () -> new CryingIronPickaxeItem(AHToolTiers.CRYING_IRON,1, -2.8f, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_SWORD = ITEMS.register("crying_iron_sword",
+            () -> new CryingIronSwordItem(AHToolTiers.CRYING_IRON, 3, -2.4f, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_SHOVEL = ITEMS.register("crying_iron_shovel",
+            () -> new CryingIronShovelItem(AHToolTiers.CRYING_IRON, 1.5f, -3.0F, new Item.Properties()));
+
 
     // Silver
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",

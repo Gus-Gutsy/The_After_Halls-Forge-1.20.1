@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "afterhalls:item/crying_iron_sword"
+  }
+}

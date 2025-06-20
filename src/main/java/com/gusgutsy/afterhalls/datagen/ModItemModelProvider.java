@@ -22,6 +22,11 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(AHItems.CURSED_RAW_IRON);
         simpleItem(AHItems.CRYING_IRON_INGOT);
+        handheldItem(AHItems.CRYING_IRON_AXE);
+        handheldItem(AHItems.CRYING_IRON_HOE);
+        handheldItem(AHItems.CRYING_IRON_PICKAXE);
+        handheldItem(AHItems.CRYING_IRON_SHOVEL);
+        handheldItem(AHItems.CRYING_IRON_SWORD);
         simpleItem(AHItems.CRYING_IRON_BOOTS);
         simpleItem(AHItems.CRYING_IRON_LEGGINGS);
         simpleItem(AHItems.CRYING_IRON_CHESTPLATE);
@@ -79,5 +84,11 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
                 .texture("wall",  new ResourceLocation(AfterHalls.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(AfterHalls.MOD_ID,"item/" + item.getId().getPath()));
     }
 }

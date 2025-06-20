@@ -25,6 +25,11 @@ public class AHCreativeModeTabs {
                         output.accept(AHItems.CURSED_RAW_IRON.get());
                         output.accept(AHItems.RAW_SILVER.get());
                         output.accept(AHItems.CRYING_IRON_INGOT.get());
+                        output.accept(AHItems.CRYING_IRON_AXE.get());
+                        output.accept(AHItems.CRYING_IRON_HOE.get());
+                        output.accept(AHItems.CRYING_IRON_PICKAXE.get());
+                        output.accept(AHItems.CRYING_IRON_SHOVEL.get());
+                        output.accept(AHItems.CRYING_IRON_SWORD.get());
                         output.accept(AHItems.CRYING_IRON_HELMET.get());
                         output.accept(AHItems.CRYING_IRON_CHESTPLATE.get());
                         output.accept(AHItems.CRYING_IRON_LEGGINGS.get());
