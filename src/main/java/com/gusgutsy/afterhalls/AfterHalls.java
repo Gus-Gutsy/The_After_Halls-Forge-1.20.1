@@ -4,14 +4,11 @@ import com.gusgutsy.afterhalls.block.AHBlocks;
 import com.gusgutsy.afterhalls.item.AHCreativeModeTabs;
 import com.gusgutsy.afterhalls.item.AHItems;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,8 +20,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import javax.annotation.Nullable;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(AfterHalls.MOD_ID)
@@ -51,6 +46,7 @@ public class AfterHalls {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(ClientModEvents.class);
+        MinecraftForge.EVENT_BUS.register(VillagerConversionHandler.class);
     }
 
     // Add the example block item to the building blocks tab
@@ -72,17 +68,15 @@ public class AfterHalls {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> {
-                ItemProperties.register(AHItems.SEER_LANTERN.get(), new ResourceLocation("afterhalls", "nearby"),
-                        (stack, level, entity, seed) -> {
-                            float val = 0.0f;
-                            CompoundTag tag = stack.getTag();
-                            if (tag != null && tag.contains("nearby", Tag.TAG_FLOAT)) {
-                                val = tag.getFloat("nearby");
-                            }
-                            return val;
-                        });
-            });
+            event.enqueueWork(() -> ItemProperties.register(AHItems.SEER_LANTERN.get(), new ResourceLocation("afterhalls", "nearby"),
+                    (stack, level, entity, seed) -> {
+                        float val = 0.0f;
+                        CompoundTag tag = stack.getTag();
+                        if (tag != null && tag.contains("nearby", Tag.TAG_FLOAT)) {
+                            val = tag.getFloat("nearby");
+                        }
+                        return val;
+                    }));
         }
     }
 }

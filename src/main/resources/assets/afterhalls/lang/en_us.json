@@ -1,6 +1,5 @@
 {
   "item.afterhalls.cursed_raw_iron" : "Cursed Raw Iron",
-  "item.afterhalls.raw_silver" : "Raw Silver",
   "item.afterhalls.crying_iron_ingot": "Crying Iron Ingot",
   "item.afterhalls.crying_iron_axe": "Crying Iron Axe",
   "item.afterhalls.crying_iron_hoe": "Crying Iron Hoe",
@@ -11,7 +10,10 @@
   "item.afterhalls.crying_iron_chestplate": "Crying Iron Chestplate",
   "item.afterhalls.crying_iron_leggings": "Crying Iron Leggings",
   "item.afterhalls.crying_iron_boots": "Crying Iron Boots",
+  "item.afterhalls.raw_silver" : "Raw Silver",
+  "item.afterhalls.silver_ingot" : "Silver Ingot",
   "item.afterhalls.seer_lantern": "Seer's Lantern",
+  "item.afterhalls.rotbrand_staff": "Rotbrand Staff",
   "item.afterhalls.pomegranate": "Pomegranate",
 
   "block.afterhalls.crying_iron_block": "Block of Crying Iron",
@@ -28,5 +30,5 @@
 
   "creativetab.after_halls_tab" : "The After Halls",
 
-  "tooltip.afterhalls.seer_lantern": "Ignites when enemies are close."
+  "tooltip.afterhalls.seer_lantern": "§7Ignites when enemies are close."
 }

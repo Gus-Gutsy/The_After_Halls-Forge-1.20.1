@@ -1,4 +1,4 @@
-package com.gusgutsy.afterhalls.item.special;
+package com.gusgutsy.afterhalls.item.cryingiron;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -9,7 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public interface ICryingIron {
-    final int DURABILITY_REFRESH_TICKS = 300;
+    int REPAIR_TICK_INTERVAL = 300;
+    int REPAIR_AMOUNT = 1;
 
     default void applyLifeSteal(LivingEntity target, LivingEntity attacker) {
         if (target.getMobType() == MobType.UNDEAD && attacker != null) {
@@ -20,15 +21,15 @@ public interface ICryingIron {
     default void increaseDurability(Level pLevel, ItemStack pStack){
         if (!pLevel.isClientSide && pStack.isDamaged()) {
             CompoundTag tag = pStack.getOrCreateTag();
-            int ticks = tag.getInt("DurabilityTicks");
-            ticks++;
+            int repairTimerTicks = tag.getInt("RepairTicks");
+            repairTimerTicks++;
 
-            if (ticks >= 600) { // 30 seconds
-                pStack.setDamageValue(pStack.getDamageValue() - 1); // heal 1 point
-                ticks = 0;
+            if (repairTimerTicks >= REPAIR_TICK_INTERVAL) { // 15 seconds
+                pStack.setDamageValue(Math.max(0, pStack.getDamageValue() - REPAIR_AMOUNT));
+                repairTimerTicks = 0;
             }
 
-            tag.putInt("DurabilityTicks", ticks);
+            tag.putInt("RepairTicks", repairTimerTicks);
         }
     }
 }

@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "afterhalls:item/rotbrand_staff_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "afterhalls:item/rotbrand_staff_2d"
+    },
+    "ground": {
+      "parent": "afterhalls:item/rotbrand_staff_2d"
+    },
+    "fixed": {
+      "parent": "afterhalls:item/rotbrand_staff_2d"
+    }
+  }
+}

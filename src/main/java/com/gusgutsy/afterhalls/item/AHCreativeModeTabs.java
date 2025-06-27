@@ -21,9 +21,9 @@ public class AHCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(AHItems.CRYING_IRON_INGOT.get()))
                     .title(Component.translatable("creativetab.after_halls_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        //Items for tab
+                        //--- Items for tab ---//
+                        // Crying Iron
                         output.accept(AHItems.CURSED_RAW_IRON.get());
-                        output.accept(AHItems.RAW_SILVER.get());
                         output.accept(AHItems.CRYING_IRON_INGOT.get());
                         output.accept(AHItems.CRYING_IRON_AXE.get());
                         output.accept(AHItems.CRYING_IRON_HOE.get());
@@ -34,12 +34,17 @@ public class AHCreativeModeTabs {
                         output.accept(AHItems.CRYING_IRON_CHESTPLATE.get());
                         output.accept(AHItems.CRYING_IRON_LEGGINGS.get());
                         output.accept(AHItems.CRYING_IRON_BOOTS.get());
+                        // Silver
+                        output.accept(AHItems.RAW_SILVER.get());
+                        output.accept(AHItems.SILVER_INGOT.get());
                         output.accept(AHItems.POMEGRANATE.get());
                         output.accept(AHItems.SEER_LANTERN.get());
+                        output.accept(AHItems.ROTBRAND_STAFF.get());
 
-                        //Blocks for tab
+                        //--- Blocks for tab ---//
                         output.accept(AHBlocks.CRYING_IRON_BLOCK.get());
                         output.accept(AHBlocks.SILVER_ORE.get());
+                        // Bleakwood
                         output.accept(AHBlocks.BLEAKWOOD_PLANKS.get());
                         output.accept(AHBlocks.BLEAKWOOD_STAIRS.get());
                         output.accept(AHBlocks.BLEAKWOOD_SLAB.get());
