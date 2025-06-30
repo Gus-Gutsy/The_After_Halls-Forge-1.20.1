@@ -3,6 +3,7 @@ package com.gusgutsy.afterhalls.block.special;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -20,8 +21,7 @@ public class CryingIronBlock extends Block {
 
     @Override
     public void playerDestroy(Level pLevel, Player pPlayer, BlockPos pPos, BlockState pState, @Nullable BlockEntity pBlockEntity, ItemStack pTool) {
-        // TODO: Modify sound that's played
-        Random rand = new Random();
+        RandomSource rand = pLevel.getRandom();
         int soundCheck = rand.nextInt(100);
 
         if (soundCheck > 90) {

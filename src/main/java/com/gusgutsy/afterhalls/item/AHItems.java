@@ -3,6 +3,7 @@ package com.gusgutsy.afterhalls.item;
 import com.gusgutsy.afterhalls.AfterHalls;
 import com.gusgutsy.afterhalls.item.cryingiron.*;
 import com.gusgutsy.afterhalls.item.special.*;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,14 +20,6 @@ public class AHItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_INGOT = ITEMS.register("crying_iron_ingot",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CRYING_IRON_HELMET = ITEMS.register("crying_iron_helmet",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CRYING_IRON_CHESTPLATE = ITEMS.register("crying_iron_chestplate",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CRYING_IRON_LEGGINGS = ITEMS.register("crying_iron_leggings",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CRYING_IRON_BOOTS = ITEMS.register("crying_iron_boots",
-            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_AXE = ITEMS.register("crying_iron_axe",
             () -> new CryingIronAxeItem(AHToolTiers.CRYING_IRON, 6, -3.1f, new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_HOE = ITEMS.register("crying_iron_hoe",
@@ -37,19 +30,24 @@ public class AHItems {
             () -> new CryingIronSwordItem(AHToolTiers.CRYING_IRON, 3, -2.4f, new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_SHOVEL = ITEMS.register("crying_iron_shovel",
             () -> new CryingIronShovelItem(AHToolTiers.CRYING_IRON, 1.5f, -3.0F, new Item.Properties()));
-
+    public static final RegistryObject<Item> CRYING_IRON_HELMET = ITEMS.register("crying_iron_helmet",
+            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_CHESTPLATE = ITEMS.register("crying_iron_chestplate",
+            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_LEGGINGS = ITEMS.register("crying_iron_leggings",
+            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> CRYING_IRON_BOOTS = ITEMS.register("crying_iron_boots",
+            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
     // Silver
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
             () -> new Item(new Item.Properties()));
-
     // Special Items
     public static final RegistryObject<Item> SEER_LANTERN = ITEMS.register("seer_lantern",
             () -> new SeerLanternItem(new Item.Properties()));
     public static final RegistryObject<Item> ROTBRAND_STAFF = ITEMS.register("rotbrand_staff",
             ()-> new RotbrandStaffItem(new Item.Properties().durability(20).setNoRepair()));
-
     // Food Items
     public static final RegistryObject<Item> POMEGRANATE = ITEMS.register("pomegranate",
             () -> new Item(new Item.Properties().food(AHFoods.POMEGRANATE)));

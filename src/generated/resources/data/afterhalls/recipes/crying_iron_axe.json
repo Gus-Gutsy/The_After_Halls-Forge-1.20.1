@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "afterhalls:crying_iron_ingot"
+    }
+  },
+  "pattern": [
+    "XX ",
+    "XH ",
+    " H "
+  ],
+  "result": {
+    "item": "afterhalls:crying_iron_axe"
+  },
+  "show_notification": true
+}

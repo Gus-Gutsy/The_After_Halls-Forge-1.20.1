@@ -16,11 +16,8 @@ public class CryingIronSwordItem extends SwordItem implements ICryingIron {
 
     @Override
     public boolean hurtEnemy(@NotNull ItemStack pStack, @NotNull LivingEntity pTarget, @NotNull LivingEntity pAttacker){
-        System.out.println("[ATTACK] Before: " + pStack.getDamageValue());
         applyLifeSteal(pTarget, pAttacker);
-        boolean result = super.hurtEnemy(pStack, pTarget, pAttacker);
-        System.out.println("[ATTACK] After: " + pStack.getDamageValue());
-        return result;
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
     @Override
@@ -38,4 +35,6 @@ public class CryingIronSwordItem extends SwordItem implements ICryingIron {
             return oldStack.getItem() != newStack.getItem();
         }
     }
+
+
 }

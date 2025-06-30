@@ -23,11 +23,14 @@ public class RotbrandStaffItem extends Item {
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack pStack, Player pPlayer, @NotNull LivingEntity pInteractionTarget, @NotNull InteractionHand pUsedHand) {
         if (!pPlayer.level().isClientSide) {
+            // Start conversion process with special tags.
+            // Other half performed by VillagerConversionHandler
             if (pInteractionTarget.getType() == EntityType.VILLAGER) {
                 CompoundTag tag = pInteractionTarget.getPersistentData();
                 tag.putInt("rotbrandConversionTime", 20);
                 tag.putBoolean("rotbrandConvertToZombie", true);
 
+                // Cause durability loss and queue a timer to prevent staff use until the end of the conversion.
                 pStack.hurtAndBreak(1, pPlayer, (p) -> p.broadcastBreakEvent(pUsedHand));
                 pPlayer.getCooldowns().addCooldown(this, 20);
             }

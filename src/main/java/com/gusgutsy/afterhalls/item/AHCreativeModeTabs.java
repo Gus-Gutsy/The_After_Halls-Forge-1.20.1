@@ -21,7 +21,7 @@ public class AHCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(AHItems.CRYING_IRON_INGOT.get()))
                     .title(Component.translatable("creativetab.after_halls_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        //--- Items for tab ---//
+                        //--- Items for Creative tab ---//
                         // Crying Iron
                         output.accept(AHItems.CURSED_RAW_IRON.get());
                         output.accept(AHItems.CRYING_IRON_INGOT.get());
@@ -37,12 +37,16 @@ public class AHCreativeModeTabs {
                         // Silver
                         output.accept(AHItems.RAW_SILVER.get());
                         output.accept(AHItems.SILVER_INGOT.get());
-                        output.accept(AHItems.POMEGRANATE.get());
+                        // Special Items
                         output.accept(AHItems.SEER_LANTERN.get());
                         output.accept(AHItems.ROTBRAND_STAFF.get());
+                        // Food
+                        output.accept(AHItems.POMEGRANATE.get());
 
-                        //--- Blocks for tab ---//
+                        //--- Blocks for Creative tab ---//
+                        // Crying Iron
                         output.accept(AHBlocks.CRYING_IRON_BLOCK.get());
+                        // Silver
                         output.accept(AHBlocks.SILVER_ORE.get());
                         // Bleakwood
                         output.accept(AHBlocks.BLEAKWOOD_PLANKS.get());

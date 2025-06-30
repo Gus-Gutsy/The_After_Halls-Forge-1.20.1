@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class SeerLanternItem extends Item {
-    private float nearbyPredicate;
+    private float nearbyPredicate = 1.0F;
 
     public SeerLanternItem(Properties pProperties) {
         super(pProperties);
@@ -22,22 +22,28 @@ public class SeerLanternItem extends Item {
 
     public void inventoryTick(@NotNull ItemStack pStack, Level pLevel, @NotNull Entity pEntity, int pItemSlot, boolean pIsSelected) {
         if (!pLevel.isClientSide) {
+            // Get the list of monsters within 16 of the player.
             List<Monster> nearMonsters = pLevel.getEntitiesOfClass(Monster.class, pEntity.getBoundingBox().inflate(16));
 
+
             if (!nearMonsters.isEmpty()){
-                double nearestDistance = Double.MAX_VALUE;
+                double nearestDistance = Double.MAX_VALUE; // Hold the max value for comparison later.
 
                 for (Monster monster : nearMonsters){
+                    // For each monster get the distance from entity to monster, comparing each for the closest one.
                     double dist = pEntity.getEyePosition().distanceTo(monster.position());
-
                     nearestDistance = Math.min(dist, nearestDistance);
                 }
 
+                // Decide on which predicate based on the closest monster.
+                // 0-5: close, 5-10: medium, 10-16: far , none: off
                 nearbyPredicate = (float) nearestDistance / 16.0f;
             }
             else {
+                // Reflects none: off
                 nearbyPredicate = 1.0F;
             }
+            // Write float to change lantern texture.
             pStack.getOrCreateTag().putFloat("nearby", nearbyPredicate);
             }
     }

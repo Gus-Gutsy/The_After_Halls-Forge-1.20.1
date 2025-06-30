@@ -1,4 +1,4 @@
-package com.gusgutsy.afterhalls;
+package com.gusgutsy.afterhalls.handler;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -18,36 +18,45 @@ public class VillagerConversionHandler {
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingTickEvent event) {
         LivingEntity entity = event.getEntity();
+        CompoundTag tag = entity.getPersistentData(); // Used to retrieve the tags from potential villager victim
 
-        CompoundTag tag = entity.getPersistentData();
+        // Check that the entity can be converted to a zombie now.
         if (tag.getBoolean("rotbrandConvertToZombie")) {
-
+            // Calculate time left
             int timeLeft = tag.getInt("rotbrandConversionTime") - 1;
             tag.putInt("rotbrandConversionTime", timeLeft);
 
-            // When time runs out: transform
+            // When time runs out, transform
             if (timeLeft <= 0 && entity.level() instanceof ServerLevel serverLevel && entity instanceof Villager villager) {
-
+                // set up the zombie
                 ZombieVillager zombieVillager = EntityType.ZOMBIE_VILLAGER.create(serverLevel);
 
-                RandomSource random = serverLevel.random;
                 if (zombieVillager != null) {
+                    // Emit sound and smoke particles with a random offset from the villager
                     villager.playSound(SoundEvents.ZOMBIE_INFECT);
-
-                    // Emit smoke particles
-
+                    RandomSource random = serverLevel.getRandom();
                     double dx = villager.getX() + (random.nextDouble() - 0.5);
                     double dy = villager.getY() + random.nextDouble() * villager.getBbHeight();
                     double dz = villager.getZ() + (random.nextDouble() - 0.5);
                     serverLevel.sendParticles(ParticleTypes.SMOKE, dx, dy, dz, 20, 0.5, 0.5, 0.5, 0.07);
 
-
-                    zombieVillager.moveTo(villager.blockPosition(), villager.getYRot(), villager.getXRot());
+                    // swap out the villager and zombie entities
+                    zombieVillager.moveTo(
+                            villager.getX(),
+                            villager.getY(),
+                            villager.getZ(),
+                            villager.getYRot(),
+                            villager.getXRot()
+                    );
+                    zombieVillager.setPose(villager.getPose());
                     zombieVillager.setCustomName(villager.getCustomName());
                     zombieVillager.setCustomNameVisible(villager.isCustomNameVisible());
-                    villager.discard();
+                    zombieVillager.setVillagerData(villager.getVillagerData());
+                    zombieVillager.setBaby((villager.isBaby()));
                     serverLevel.addFreshEntity(zombieVillager);
 
+                    // Clean up
+                    villager.discard();
                     tag.remove("rotbrandConversionTime");
                     tag.remove("rotbrandConvertToZombie");
                 }

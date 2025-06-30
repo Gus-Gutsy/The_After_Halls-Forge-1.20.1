@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_iron": {
+    "has_soul_sand": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:raw_iron"
+              "minecraft:soul_sand"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_raw_iron",
+      "has_soul_sand",
       "has_the_recipe"
     ]
   ],

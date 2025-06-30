@@ -34,7 +34,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AHItems.CURSED_RAW_IRON.get())
                 .requires(Items.RAW_IRON)
                 .requires(Items.SOUL_SAND)
-                .unlockedBy(getHasName(Items.RAW_IRON), has(Items.RAW_IRON))
+                .unlockedBy(getHasName(Items.SOUL_SAND), has(Items.SOUL_SAND))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, AHBlocks.CRYING_IRON_BLOCK.get())
@@ -50,6 +50,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(AHItems.CRYING_IRON_INGOT.get()), has(AHItems.CRYING_IRON_INGOT.get()))
                 .save(pWriter);
 
+        simpleToolSetRecipeBuilder(pWriter, AHItems.CRYING_IRON_INGOT, AHItems.CRYING_IRON_AXE, AHItems.CRYING_IRON_HOE,
+                AHItems.CRYING_IRON_PICKAXE, AHItems.CRYING_IRON_SHOVEL, AHItems.CRYING_IRON_SWORD);
         simpleArmorSetRecipeBuilder(pWriter, AHItems.CRYING_IRON_INGOT, AHItems.CRYING_IRON_HELMET, AHItems.CRYING_IRON_CHESTPLATE,
                 AHItems.CRYING_IRON_LEGGINGS, AHItems.CRYING_IRON_BOOTS);
 
@@ -73,7 +75,50 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(pFinishedRecipeConsumer, AfterHalls.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
+    }
 
+    private static void simpleToolSetRecipeBuilder(Consumer<FinishedRecipe> pWriter,
+                                                   RegistryObject<Item> pIngot,
+                                                   RegistryObject<Item> pAxe,
+                                                   RegistryObject<Item> pHoe,
+                                                   RegistryObject<Item> pPickaxe,
+                                                   RegistryObject<Item> pShovel,
+                                                   RegistryObject<Item> pSword){
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, pAxe.get())
+                .pattern("XX ")
+                .pattern("XH ")
+                .pattern(" H ")
+                .define('X', pIngot.get()).define('H', Items.STICK)
+                .unlockedBy(getHasName(pIngot.get()), has(pIngot.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, pHoe.get())
+                .pattern("XX ")
+                .pattern(" H ")
+                .pattern(" H ")
+                .define('X', pIngot.get()).define('H', Items.STICK)
+                .unlockedBy(getHasName(pIngot.get()), has(pIngot.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, pPickaxe.get())
+                .pattern("XXX")
+                .pattern(" H ")
+                .pattern(" H ")
+                .define('X', pIngot.get()).define('H', Items.STICK)
+                .unlockedBy(getHasName(pIngot.get()), has(pIngot.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, pShovel.get())
+                .pattern(" X ")
+                .pattern(" H ")
+                .pattern(" H ")
+                .define('X', pIngot.get()).define('H', Items.STICK)
+                .unlockedBy(getHasName(pIngot.get()), has(pIngot.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, pSword.get())
+                .pattern(" X ")
+                .pattern(" X ")
+                .pattern(" H ")
+                .define('X', pIngot.get()).define('H', Items.STICK)
+                .unlockedBy(getHasName(pIngot.get()), has(pIngot.get()))
+                .save(pWriter);
     }
 
     private static void simpleArmorSetRecipeBuilder(Consumer<FinishedRecipe> pWriter,

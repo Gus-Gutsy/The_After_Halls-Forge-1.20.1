@@ -1,9 +1,11 @@
 package com.gusgutsy.afterhalls.datagen;
 
 import com.gusgutsy.afterhalls.AfterHalls;
+import com.gusgutsy.afterhalls.item.AHItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -17,6 +19,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        this.tag(ItemTags.TRIMMABLE_ARMOR).add(
+                AHItems.CRYING_IRON_HELMET.get(),
+                AHItems.CRYING_IRON_CHESTPLATE.get(),
+                AHItems.CRYING_IRON_LEGGINGS.get(),
+                AHItems.CRYING_IRON_BOOTS.get()
+        );
     }
 }
