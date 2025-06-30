@@ -31,13 +31,13 @@ public class AHItems {
     public static final RegistryObject<Item> CRYING_IRON_SHOVEL = ITEMS.register("crying_iron_shovel",
             () -> new CryingIronShovelItem(AHToolTiers.CRYING_IRON, 1.5f, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_HELMET = ITEMS.register("crying_iron_helmet",
-            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new CryingIronArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_CHESTPLATE = ITEMS.register("crying_iron_chestplate",
-            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            () -> new CryingIronArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_LEGGINGS = ITEMS.register("crying_iron_leggings",
-            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            () -> new CryingIronArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> CRYING_IRON_BOOTS = ITEMS.register("crying_iron_boots",
-            () -> new ArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
+            () -> new CryingIronArmorItem(AHArmorMaterials.CRYING_IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
     // Silver
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties()));

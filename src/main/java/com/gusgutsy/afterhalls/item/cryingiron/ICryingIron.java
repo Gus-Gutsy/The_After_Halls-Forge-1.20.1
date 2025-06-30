@@ -17,9 +17,9 @@ public interface ICryingIron {
     float HEAL_AMOUNT = 2.0f;
 
     default void applyLifeSteal(LivingEntity target, LivingEntity attacker) {
-
         if (target.getMobType() == MobType.UNDEAD && attacker != null) {
             attacker.heal(HEAL_AMOUNT);
+            // Generate a soul particle to show life steal
             ((ServerLevel) target.level()).sendParticles(
                     ParticleTypes.SOUL,
                     target.getX(), target.getY() + 1.0d, target.getZ(),
@@ -29,7 +29,6 @@ public interface ICryingIron {
     }
 
     default void increaseDurability(Level pLevel, ItemStack pStack){
-        // Check that the item is damaged.
         if (!pLevel.isClientSide && pStack.isDamaged()) {
             // Get or create the RepairTicks tag, then find out the number of ticks before repair.
             CompoundTag tag = pStack.getOrCreateTag();
