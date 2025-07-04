@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-26T20:26:18.7958117	Item Models: afterhalls
+// 1.20.1	2025-07-03T16:06:59.4675696	Item Models: afterhalls
 f4e1f7b209f5e71624debc638affaf7b359b8961 assets/afterhalls/models/item/bleakwood_button.json
 e245f8c5512d7b263be2333748de689ea99bf65b assets/afterhalls/models/item/bleakwood_door.json
 68bd7390afc5ef0a9e8b2b97dd06848f90bad26b assets/afterhalls/models/item/bleakwood_fence.json
@@ -58,6 +58,8 @@ eea76f219674a5048f77c80181c45327e6da1db5 assets/afterhalls/models/item/crying_ir
 ee128abaa9a217548df236b0ff668a55f82285e2 assets/afterhalls/models/item/crying_iron_shovel.json
 54398d9687c9c03090fa3c4dbc03036cc8b1e76f assets/afterhalls/models/item/crying_iron_sword.json
 8d5ece91c9579248b5d0f8d9ccc83c0094617cc3 assets/afterhalls/models/item/cursed_raw_iron.json
+fbc7d01eb69d8aae2c2e85ff5a21bb7923655fdb assets/afterhalls/models/item/jet.json
+c3e2ef8c8c765c9257c6dcf3751c82766c82507b assets/afterhalls/models/item/opal.json
 73495670a3d9f486bb2baa4a8ba56b4464c14e16 assets/afterhalls/models/item/pomegranate.json
 347f43fabe711758cd4d0f03c8521d085d84db87 assets/afterhalls/models/item/raw_silver.json
 e566e3aa5947b7723790c0321b32cebe5bb3c616 assets/afterhalls/models/item/silver_ingot.json

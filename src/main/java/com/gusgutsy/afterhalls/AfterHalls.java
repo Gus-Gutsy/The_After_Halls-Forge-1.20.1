@@ -4,6 +4,7 @@ import com.gusgutsy.afterhalls.block.AHBlocks;
 import com.gusgutsy.afterhalls.handler.VillagerConversionHandler;
 import com.gusgutsy.afterhalls.item.AHCreativeModeTabs;
 import com.gusgutsy.afterhalls.item.AHItems;
+import com.gusgutsy.afterhalls.loot.AHLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,6 +32,7 @@ public class AfterHalls {
         AHCreativeModeTabs.register(modEventBus);
         AHItems.register(modEventBus);
         AHBlocks.register(modEventBus);
+        AHLootModifiers.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);

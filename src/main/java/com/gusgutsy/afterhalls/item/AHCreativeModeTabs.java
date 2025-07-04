@@ -40,6 +40,8 @@ public class AHCreativeModeTabs {
                         // Special Items
                         output.accept(AHItems.SEER_LANTERN.get());
                         output.accept(AHItems.ROTBRAND_STAFF.get());
+                        output.accept(AHItems.JET.get());
+                        output.accept(AHItems.OPAL.get());
                         // Food
                         output.accept(AHItems.POMEGRANATE.get());
 

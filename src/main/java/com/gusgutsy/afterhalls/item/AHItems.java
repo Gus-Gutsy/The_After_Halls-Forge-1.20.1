@@ -43,6 +43,11 @@ public class AHItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
             () -> new Item(new Item.Properties()));
+    // Gems
+    public static final RegistryObject<Item> JET = ITEMS.register("jet",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OPAL = ITEMS.register("opal",
+            () -> new Item(new Item.Properties()));
     // Special Items
     public static final RegistryObject<Item> SEER_LANTERN = ITEMS.register("seer_lantern",
             () -> new SeerLanternItem(new Item.Properties()));

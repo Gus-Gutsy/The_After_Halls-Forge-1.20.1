@@ -35,6 +35,4 @@ public class CryingIronSwordItem extends SwordItem implements ICryingIron {
             return oldStack.getItem() != newStack.getItem();
         }
     }
-
-
 }

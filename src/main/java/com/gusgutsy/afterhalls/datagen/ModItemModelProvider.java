@@ -49,17 +49,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(AHItems.CRYING_IRON_PICKAXE);
         handheldItem(AHItems.CRYING_IRON_SHOVEL);
         handheldItem(AHItems.CRYING_IRON_SWORD);
-        // TODO: Check to see if these entries below are needed.
-        //simpleItem(AHItems.CRYING_IRON_BOOTS);
-        //simpleItem(AHItems.CRYING_IRON_LEGGINGS);
-        //simpleItem(AHItems.CRYING_IRON_CHESTPLATE);
-        //simpleItem(AHItems.CRYING_IRON_HELMET);
         trimmedArmorItem(AHItems.CRYING_IRON_HELMET);
         trimmedArmorItem(AHItems.CRYING_IRON_CHESTPLATE);
         trimmedArmorItem(AHItems.CRYING_IRON_LEGGINGS);
         trimmedArmorItem(AHItems.CRYING_IRON_BOOTS);
         simpleItem(AHItems.RAW_SILVER);
         simpleItem(AHItems.SILVER_INGOT);
+        simpleItem(AHItems.JET);
+        simpleItem(AHItems.OPAL);
         simpleItem(AHItems.POMEGRANATE);
 
         simpleBlockItem(AHBlocks.BLEAKWOOD_DOOR);

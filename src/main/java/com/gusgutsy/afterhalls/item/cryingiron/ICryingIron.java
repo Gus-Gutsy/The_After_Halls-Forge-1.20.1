@@ -1,5 +1,6 @@
 package com.gusgutsy.afterhalls.item.cryingiron;
 
+import com.gusgutsy.afterhalls.capability.ToolCapabilities;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -30,19 +31,13 @@ public interface ICryingIron {
 
     default void increaseDurability(Level pLevel, ItemStack pStack){
         if (!pLevel.isClientSide && pStack.isDamaged()) {
-            // Get or create the RepairTicks tag, then find out the number of ticks before repair.
-            CompoundTag tag = pStack.getOrCreateTag();
-            int repairTimerTicks = tag.getInt("RepairTicks");
-            repairTimerTicks++;
-
-            // If it's time to repair, fix by Repair amount (should be 1)
-            if (repairTimerTicks >= REPAIR_TICK_INTERVAL) { // 15 seconds
-                pStack.setDamageValue(Math.max(0, pStack.getDamageValue() - REPAIR_AMOUNT));
-                repairTimerTicks = 0;
-            }
-
-            // put the new incremented value
-            tag.putInt("RepairTicks", repairTimerTicks);
+            pStack.getCapability(ToolCapabilities.DURABILITY_TRACKER).ifPresent(tracker -> {
+                tracker.tick();
+                if (tracker.shouldHeal()) {
+                    pStack.setDamageValue(Math.max(0, pStack.getDamageValue() - 1));
+                    tracker.reset();
+                }
+            });
         }
     }
 }

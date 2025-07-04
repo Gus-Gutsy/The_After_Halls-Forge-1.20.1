@@ -1,7 +1,6 @@
 package com.gusgutsy.afterhalls.item;
 
 import com.gusgutsy.afterhalls.AfterHalls;
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -11,8 +10,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum AHArmorMaterials implements ArmorMaterial {
-    CRYING_IRON("crying_iron", 15, new int[] {5,7,5,4}, 19,
-            SoundEvents.ARMOR_EQUIP_IRON, 1f, 0f,
+    CRYING_IRON("crying_iron", 11, new int[] {2,6,5,2}, 19,
+            SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0f,
             () -> Ingredient.of(AHItems.CRYING_IRON_INGOT.get()));
 
     private final String name;
