@@ -1,7 +1,7 @@
 package com.gusgutsy.afterhalls.capability;
 
 
-import com.gusgutsy.afterhalls.DurabilityTracker;
+import com.gusgutsy.afterhalls.custom.DurabilityTracker;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.CapabilityToken;

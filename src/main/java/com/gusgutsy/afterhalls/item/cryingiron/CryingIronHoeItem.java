@@ -25,6 +25,7 @@ public class CryingIronHoeItem extends HoeItem implements ICryingIron {
         increaseDurability(pLevel, pStack);
         super.onInventoryTick(pStack, pLevel, pPlayer, pSlotIndex, pSelectedIndex);
     }
+
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         if (slotChanged) {

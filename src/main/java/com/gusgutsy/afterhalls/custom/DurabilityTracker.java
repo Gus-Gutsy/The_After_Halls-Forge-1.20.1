@@ -1,4 +1,4 @@
-package com.gusgutsy.afterhalls;
+package com.gusgutsy.afterhalls.custom;
 
 public class DurabilityTracker {
     private int ticks = 0;

@@ -25,4 +25,14 @@ public class CryingIronAxeItem extends AxeItem implements ICryingIron {
         increaseDurability(pLevel, pStack);
         super.onInventoryTick(pStack, pLevel, pPlayer, pSlotIndex, pSelectedIndex);
     }
+
+    @Override
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        if (slotChanged) {
+            return true;
+        }
+        else {
+            return oldStack.getItem() != newStack.getItem();
+        }
+    }
 }

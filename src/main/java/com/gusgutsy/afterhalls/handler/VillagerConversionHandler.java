@@ -18,16 +18,17 @@ public class VillagerConversionHandler {
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingTickEvent event) {
         LivingEntity entity = event.getEntity();
+
         CompoundTag tag = entity.getPersistentData(); // Used to retrieve the tags from potential villager victim
 
         // Check that the entity can be converted to a zombie now.
-        if (tag.getBoolean("rotbrandConvertToZombie")) {
+        if (entity instanceof Villager villager && tag.getBoolean("rotbrandConvertToZombie")) {
             // Calculate time left
             int timeLeft = tag.getInt("rotbrandConversionTime") - 1;
             tag.putInt("rotbrandConversionTime", timeLeft);
 
             // When time runs out, transform
-            if (timeLeft <= 0 && entity.level() instanceof ServerLevel serverLevel && entity instanceof Villager villager) {
+            if (timeLeft <= 0 && entity.level() instanceof ServerLevel serverLevel) {
                 // set up the zombie
                 ZombieVillager zombieVillager = EntityType.ZOMBIE_VILLAGER.create(serverLevel);
 
